@@ -9,6 +9,8 @@ from django.contrib.auth import authenticate, login,logout
 def index(request):
     return render(request, 'index.html')
 
+
+#user registration
 def register(request):
     if request.method =='POST':
         username = request.POST['username']
@@ -24,12 +26,19 @@ def register(request):
         
         #save our user instance
         new_user.save()
+        return render(request, 'login.html')
     
     return render(request, 'register.html')
 
+
+#user login function
 def user_login(request):
+    
     return render(request, 'login.html')
 
+
+#logout function
 def user_logout(request):
+    logout(request)
     return render(request, 'login.html')
 
