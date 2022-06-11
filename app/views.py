@@ -7,6 +7,9 @@ from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 from .forms import ProfileUpdateForm
 
+from django.db.models import Q
+from django.views.generic import TemplateView, ListView
+
 # Create your views here.
 
 def index(request):
@@ -87,4 +90,19 @@ def user_post(request):
         
         return redirect('home')
     return render(request, 'post.html')
+
+def search(request):
+    return render(request, 'search_results.html')
+
+
+class SearchResultsView(ListView):
+    model = Project
+    template_name = "search_results.html"
+    
+    def get_queryset(self):  # new
+        query = self.request.GET.get("query")
+        object_list = Project.objects.filter(
+            Q(title__icontains=query)
+        )
+        return object_list
 
