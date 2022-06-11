@@ -8,7 +8,7 @@ from .models import *
 # Create your views here.
 
 def index(request):
-    projects = Project_post.objects.all()
+    projects = Project.objects.all()
     return render(request, 'index.html', {'projects':projects})
 
 
@@ -54,10 +54,10 @@ def user_logout(request):
 
 def user_post(request):
     if request.method=='POST':
-        image=request.FILES.get('image')
+        photo=request.FILES.get('photo')
         title=request.POST.get('title')
         description=request.POST.get('description')
-        posts=Project_post(post_image=image,title=title,description=description)
+        posts=Project(post_image=photo,title=title,description=description)
         
         posts.save_project_post()
         

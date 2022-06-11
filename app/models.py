@@ -24,7 +24,7 @@ class Profile(models.Model):
     def update_profile(self):
         self.update()
     
-class Project_post(models.Model):
+class Project(models.Model):
     title=models.CharField(max_length=100, null=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts",null=True, blank=True )
     post_image=CloudinaryField('post_image')
@@ -54,7 +54,7 @@ class Rating(models.Model):
     total =  models.IntegerField(null=True,default=0)
     average=models.FloatField(max_length=10,null=True)
     user = models.ForeignKey(User,null = True, on_delete=models.CASCADE)
-    post = models.ForeignKey(Project_post, related_name='rating',null=True, on_delete=models.CASCADE)
+    post = models.ForeignKey(Project, related_name='rating',null=True, on_delete=models.CASCADE)
     
     
     def __str__(self):

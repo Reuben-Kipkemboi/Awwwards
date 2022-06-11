@@ -4,5 +4,5 @@ from. models import *
 # Register your models here.
 
 admin.site.register(Profile)
-admin.site.register(Project_post)
+admin.site.register(Project)
 admin.site.register(Rating)
