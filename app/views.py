@@ -52,7 +52,14 @@ def user_login(request):
 #logout function
 def user_logout(request):
     logout(request)
-    return render(request, 'login.html')
+    return render(request, 'index.html')
+
+
+def user_profile(request):
+    users= User.objects.all()
+    
+    
+    return render (request, 'profile.html', {'users':users})
 
 def user_post(request):
     if request.method=='POST':

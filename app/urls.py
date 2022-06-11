@@ -12,4 +12,8 @@ urlpatterns = [
     
     path('post/', views.user_post, name='post'),
     
+    path('profile/', views.user_profile, name ='profile'),
+    
+    
+    
 ]
