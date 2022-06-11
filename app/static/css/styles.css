@@ -6,142 +6,179 @@
 
 
 /* font-family: 'Open Sans', sans-serif; */
-#intro{
+#intro {
     height: 8vh;
     background-color: #000;
     color: #fff;
 }
-#intro .text-center{
-    padding-top:1%;
+
+#intro .text-center {
+    padding-top: 1%;
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
 
 }
 
-#second-box{
+#second-box {
     background-color: #f4f7f6;
     height: 10vh;
     padding-top: 1%;
 }
-#center{
-    font-weight:400;
-    text-decoration:none solid rgb(32, 33, 33);
+
+#center {
+    font-weight: 400;
+    text-decoration: none solid rgb(32, 33, 33);
 
 }
-.regular-fonts{
+
+.regular-fonts {
     float: right;
     margin-right: 2%;
 }
-#label{
+
+#label {
     font-weight: bold;
     color: #000;
     font-size: 5vh;
 
 }
-#search{
+
+#search {
     border: none;
-    outline:none;
+    outline: none;
     background-color: transparent;
 }
-#name{
+
+#name {
     text-align: center;
 }
-#images{
+
+#images {
     width: 100%;
 }
-#register-form{
+
+#register-form {
     background-color: #f4f7f6;
     border: 1px solid #000;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-bottom: 3%;
 }
-#buttons{
+
+#buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-.btn-google, .btn-twitter, .btn-facebook{
+
+.btn-google,
+.btn-twitter,
+.btn-facebook {
     padding: 12%;
     width: 150px;
-    border:none;
+    border: none;
     margin-left: 3%;
 }
 
-.btn-google{
+.btn-google {
     background-color: #fff;
     color: #000;
 }
 
-.btn-facebook{
-   background-color: #00203e;
-   color: #fff;
+.btn-facebook {
+    background-color: #00203e;
+    color: #fff;
 
 }
-.btn-twitter{
-    background-color:#48ab9e;
+
+.btn-twitter {
+    background-color: #48ab9e;
     color: #fff;
 }
-#register-btn{
+
+#register-btn {
     background-color: #48ab9e;
     color: #fff;
     text-align: center;
-    width: 80%;
+    width: 100%;
     padding: 2.5%;
 }
-#profile_pic{
+
+#profile_pic {
     width: 150px;
     height: 150px;
-    object-fit:cover;
+    object-fit: cover;
 }
-.login-links{
+
+.login-links {
     color: #48ab9e;
 }
-#login-form{
+
+#login-form {
     background-color: #f4f7f6;
     border: 1px solid #000;
-    padding: 5% 5%  5% 10%;
+    padding: 5% 5% 5% 10%;
 }
-#username, #password{
+
+#username,
+#password {
     height: 9vh;
     width: 85%;
 }
-#login-btn{
+
+#login-btn {
 
     padding: 2.5%;
     background-color: #48ab9e;
     outline: none;
-    border:none;
+    border: none;
     width: 85%;
     font-weight: bold;
 }
-#login-buttons{
+
+#login-buttons {
     display: flex;
     flex-direction: row;
-    padding-left:10px;
-    
-   
-
+    padding-left: 10px;
 }
-.login-btn-google, .login-btn-twitter, .login-btn-facebook{
+
+.login-btn-google,
+.login-btn-twitter,
+.login-btn-facebook {
     padding: 12%;
     width: 150px;
-    border:none;
+    border: none;
 }
-.login-btn-google{
+
+.login-btn-google {
     margin-right: 25px;
     background-color: #fff;
     color: #000;
 }
-.login-btn-twitter{
-    background-color:#48ab9e;
+
+.login-btn-twitter {
+    background-color: #48ab9e;
     color: #fff;
     margin-right: 25px;
 }
 
-.login-btn-facebook{
+.login-btn-facebook {
     background-color: #00203e;
-   color: #fff;
+    color: #fff;
 }
-.sign-in{
+
+.sign-in {
     font-size: 3vh;
     color: #000;
     font-weight: bold;
+    padding:2%;
+}
+
+#last_name,
+#first_name,
+#email,
+#password1,
+#password2 {
+    height: 8vh;
+    width: 100%;
 }

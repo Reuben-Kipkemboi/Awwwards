@@ -2,18 +2,21 @@
 {% load bootstrap4 %}
 {% load static %}
 {% block content %}
-<form action="{% url 'register' %}" method="POST" class="col-md-7 mx-auto px-4" id="register-form">
+<form action="{% url 'register' %}" method="POST" class="col-md-7 mx-auto mt-5 mb-3" id="register-form">
     <div class="row mt-4">
-        <p class="col-md-6">Register</p>
+        <p class="col-md-6">Register with</p>
 
         <p class="col-md-6">Are you a member?  <a href="{% url 'login'%}">Login now</a></p>
     </div>
+    
 
     <div class="row" id="buttons">
         <a href=""><button class="btn-google"> <i class="fa-brands fa-google mr-1"></i>Google</button></a>
         <a href=""><button class="btn-twitter"><i class="fa-brands fa-twitter mr-1"></i>Twitter</button></a>
         <a href=""><button class="btn-facebook"><i class="fa-brands fa-facebook-f mr-1"></i> Facebook</button></a>
     </div>
+
+    <p class="sign-in">Or with your E-Mail</p>
     {% csrf_token %}
     <div class="row">
         <div class="form-group col-md-6">
