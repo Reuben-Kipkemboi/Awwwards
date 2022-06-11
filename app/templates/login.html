@@ -4,6 +4,12 @@
 {% block content %}
 <div class="col-md-7 mx-auto mt-5">
     <form action="{% url 'login'%}" method="POST">
+        <div class="row mt-4">
+            <p class="col-md-6">Sign In to Continue</p>
+    
+            <p class="col-md-6">Not a member yet?  <a href="{% url 'register'%}">Register Now</a></p>
+        </div>
+
         {% csrf_token %}
         <div class="form-group">
             <label for="username">Your Username</label>

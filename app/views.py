@@ -15,8 +15,8 @@ def index(request):
 #user registration
 def register(request):
     if request.method =='POST':
-        username = request.POST['firstname']
-        username = request.POST['lastname']
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
         username = request.POST['username']
         email = request.POST['email']
         password1 = request.POST['password1']
@@ -26,7 +26,7 @@ def register(request):
             messages.error(request, 'Check your passwords')
             return redirect('register')
         
-        new_user = User.objects.create_user(username = username, email=email, password= password2)
+        new_user = User.objects.create_user(first_name = first_name, last_name = last_name, username = username, email=email, password= password2)
         
         #save our user instance
         new_user.save()
