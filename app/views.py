@@ -15,6 +15,8 @@ def index(request):
 #user registration
 def register(request):
     if request.method =='POST':
+        username = request.POST['firstname']
+        username = request.POST['lastname']
         username = request.POST['username']
         email = request.POST['email']
         password1 = request.POST['password1']
