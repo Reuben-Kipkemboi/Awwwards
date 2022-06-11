@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login,logout
 from .models import *
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
-
+from .forms import ProfileUpdateForm
 
 # Create your views here.
 
@@ -65,7 +65,16 @@ def user_profile(request):
 
 
 def update_profile(request):
-    return render(request, 'update_profile.html')
+    
+    if request.method == 'POST':
+        userprofileform = ProfileUpdateForm(request.POST,request.FILES,instance=request.user.profile)
+        if  userprofileform.is_valid():
+            userprofileform.save()
+            return redirect(to='profile')
+    else:
+        form=ProfileUpdateForm(instance =request.user.profile)
+    return render(request,'update_profile.html',{'form':form})
+
 
 def user_post(request):
     if request.method=='POST':

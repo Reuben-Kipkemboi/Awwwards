@@ -6,16 +6,25 @@
 
 <div class="container-fluid">
 
-    <div class="col-md-5">
-        <h3 class="ms-2">User Name:{{request.user.username}}
+    <div class="col-md-5 shadow-lg mx-auto p-4">
+        <h3 class="ms-2 text-center">User Name:{{request.user.username}}
             <h4>Full Name: {{request.user.first_name}} {{request.user.last_name}}</h4>
         </h3>
-        <img src="{{request.user.profile.profile_pic.url}}" class="rounded-circle" alt="{{request.user.username}}" id="profile_pic">
+        <img src="{{request.user.profile.profile_pic.url}}" class="rounded-circle" alt="{{request.user.username}}"
+            id="profile_pic">
+        <hr>
+        <p class="text-center">User Biography</p>
+
         <p>{{request.user.profile.bio}}</p>
+        <hr>
+        <p class="text-center">contact Details</p>
+
         <p>{{request.user.profile.contacts}}</p>
-        
+
+        <a href="{% url 'update' %}"><button type="button" class="btn btn-outline-info btn-sm mx-auto">Edit profile</button></a>
+
     </div>
-    
+
 </div>
 
 {% endblock content %}
