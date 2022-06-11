@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+
+/* font-family: 'Open Sans', sans-serif; */
 #intro{
     height: 8vh;
     background-color: #000;
@@ -58,25 +63,24 @@
     width: 150px;
     border:none;
     margin-left: 3%;
-
-
 }
+
 .btn-google{
     background-color: #fff;
     color: #000;
-
 }
+
 .btn-facebook{
    background-color: #00203e;
    color: #fff;
 
 }
 .btn-twitter{
-    background-color:#0798f7;
+    background-color:#48ab9e;
     color: #fff;
 }
 #register-btn{
-    background-color: #0798f7;
+    background-color: #48ab9e;
     color: #fff;
     text-align: center;
     width: 80%;
@@ -86,4 +90,58 @@
     width: 150px;
     height: 150px;
     object-fit:cover;
+}
+.login-links{
+    color: #48ab9e;
+}
+#login-form{
+    background-color: #f4f7f6;
+    border: 1px solid #000;
+    padding: 5% 5%  5% 10%;
+}
+#username, #password{
+    height: 9vh;
+    width: 85%;
+}
+#login-btn{
+
+    padding: 2.5%;
+    background-color: #48ab9e;
+    outline: none;
+    border:none;
+    width: 85%;
+    font-weight: bold;
+}
+#login-buttons{
+    display: flex;
+    flex-direction: row;
+    padding-left:10px;
+    
+   
+
+}
+.login-btn-google, .login-btn-twitter, .login-btn-facebook{
+    padding: 12%;
+    width: 150px;
+    border:none;
+}
+.login-btn-google{
+    margin-right: 25px;
+    background-color: #fff;
+    color: #000;
+}
+.login-btn-twitter{
+    background-color:#48ab9e;
+    color: #fff;
+    margin-right: 25px;
+}
+
+.login-btn-facebook{
+    background-color: #00203e;
+   color: #fff;
+}
+.sign-in{
+    font-size: 3vh;
+    color: #000;
+    font-weight: bold;
 }

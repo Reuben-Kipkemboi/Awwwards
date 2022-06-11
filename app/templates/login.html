@@ -3,11 +3,11 @@
 {% load static %}
 {% block content %}
 <div class="col-md-7 mx-auto mt-5">
-    <form action="{% url 'login'%}" method="POST">
+    <form action="{% url 'login'%}" method="POST" id="login-form">
         <div class="row mt-4">
-            <p class="col-md-6">Sign In to Continue</p>
-    
-            <p class="col-md-6">Not a member yet?  <a href="{% url 'register'%}">Register Now</a></p>
+            <p class="col-md-6 font-weight-bold">Sign In to Continue</p>
+
+            <p class="col-md-6">Not a member yet? <a href="{% url 'register'%}" class="login-links">Register Now</a></p>
         </div>
 
         {% csrf_token %}
@@ -19,7 +19,17 @@
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" name="password">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <p class="">
+            <button type="submit" class="btn btn-primary" id="login-btn">Login Now</button>
+        </p>
+
+        <p class="sign-in">or sign in with</p>
+
+        <div class="row" id="login-buttons">
+            <a href=""><button class="login-btn-google"> <i class="fa-brands fa-google mr-1"></i>Google</button></a>
+            <a href=""><button class="login-btn-twitter"><i class="fa-brands fa-twitter mr-1"></i>Twitter</button></a>
+            <a href=""><button class="login-btn-facebook"><i class="fa-brands fa-facebook-f mr-1"></i> Facebook</button></a>
+        </div>
     </form>
 </div>
 {% endblock content %}
