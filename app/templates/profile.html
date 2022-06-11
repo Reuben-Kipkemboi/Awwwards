@@ -1,15 +1,20 @@
 {% extends "base.html" %}
 {% load bootstrap4 %}
 {% load static %}
-{% block title %} Awaards|profile {% endblock title%}
+{% block title %} Awwwards|profile {% endblock title%}
 {% block content %}
 
 <div class="container-fluid">
-    {% for user in users %}
+
     <div class="col-md-5">
         <img src="" alt="">
+        <h3 class="ms-2">{{request.user.username}}
+        </h3>
+        <p>{{request.user.profile.bio}}</p>
+        <p>{{request.user.profile.contacts}}</p>
+        
     </div>
-    {% endfor %}
+    
 </div>
 
 {% endblock content %}

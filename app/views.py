@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
 from .models import *
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError
 
 
 # Create your views here.
@@ -23,15 +25,12 @@ def register(request):
         password2= request.POST['password2']
         
         if password1 != password2:
-            messages.error(request, 'Check your passwords')
-            return redirect('register')
+            messages.error(request,"confirm your passwords")
+            return redirect('/register')
         
-        new_user = User.objects.create_user(first_name = first_name, last_name = last_name, username = username, email=email, password= password2)
+        new_user = User.objects.create_user(first_name=first_name,last_name=last_name,username=username,email=email,password=password1)
         
-        #save our user instance
         new_user.save()
-        return render(request, 'login.html')
-    
     return render(request, 'register.html')
 
 
@@ -60,6 +59,10 @@ def user_profile(request):
     
     
     return render (request, 'profile.html', {'users':users})
+
+
+def update_profile(request):
+    return render(request, 'update_profile.html')
 
 def user_post(request):
     if request.method=='POST':
