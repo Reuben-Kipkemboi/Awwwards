@@ -26,8 +26,8 @@ class Profile(models.Model):
     
 class Project_post(models.Model):
     title=models.CharField(max_length=100, null=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
-    post_image=CloudinaryField('image',blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts",null=True, blank=True )
+    post_image=CloudinaryField('post_image')
     description=models.TextField(null=False)
     posted_at=models.DateTimeField(auto_now_add=True)
     

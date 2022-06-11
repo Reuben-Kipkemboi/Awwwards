@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block content %}
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <form class="" method="POST" action="">
+                    {% csrf_token %}
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="title">Project Title</label>
+                        <input type="text" id="project-title" class="form-control form-control-lg" name="title" />
+
+                    </div>
+
+                    <!-- project Description -->
+
+                    <div class="form-outline mb-3">
+                        <label class="form-label" for="title">Project Description</label>
+                        <textarea class="form-control" id="description" rows="5"name="description"></textarea>
+                    </div>
+
+                    <!-- Image input -->
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="image"
+                                aria-describedby="inputGroupFileAddon01" name="image">
+                            <label class="custom-file-label" for="image-file">Choose file</label>
+                        </div>
+                    </div>
+
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Upload Project</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

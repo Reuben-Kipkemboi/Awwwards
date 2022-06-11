@@ -52,3 +52,15 @@ def user_logout(request):
     logout(request)
     return render(request, 'login.html')
 
+def user_post(request):
+    if request.method=='POST':
+        image=request.FILES.get('image')
+        title=request.POST.get('title')
+        description=request.POST.get('description')
+        posts=Project_post(post_image=image,title=title,description=description)
+        
+        posts.save_project_post()
+        
+        return redirect('home')
+    return render(request, 'post.html')
+
