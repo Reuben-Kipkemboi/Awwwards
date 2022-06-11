@@ -13,6 +13,17 @@ class Profile(models.Model):
     def __str__(self):
         return self.contacts
     
+    
+    def save_profile(self):
+        self.save()
+        
+        
+    def delete_profile(self):
+        self.delete()
+        
+    def update_profile(self):
+        self.update()
+    
 class Project_post(models.Model):
     title=models.CharField(max_length=100, null=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
@@ -22,6 +33,17 @@ class Project_post(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def save_project_post(self):
+        self.save()
+        
+    def delete_project_post(self):
+        self.update()
+        
+    def update_project_post(self):
+        self.update()
+        
+    
     
 class Rating(models.Model):
     project_name = models.CharField(max_length=100, null=True)
@@ -37,6 +59,15 @@ class Rating(models.Model):
     
     def __str__(self):
         return self.project_name
+    
+    def save_rating(self):
+        self.save()
+        
+    def delete_rating(self):
+        self.save()
+        
+    def update_rating(self):
+        self.update()
 
 
 
