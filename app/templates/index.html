@@ -21,4 +21,18 @@
 </div>
 {% include 'navbar.html'%}
 
+
+<div class="container-fluid">
+    <div class="row">
+        {% for project in projects %}
+        <div class="col-md-5">
+            <h2>{{project.title}}</h2>
+            <img src="{{project.post_image.url}}" alt="{{project.title}}">
+            <p>{{project.description}}</p>
+            <small>{{project.posted_at}}</small>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock content %}
