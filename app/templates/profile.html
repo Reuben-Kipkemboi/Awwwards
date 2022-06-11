@@ -7,9 +7,10 @@
 <div class="container-fluid">
 
     <div class="col-md-5">
-        <img src="" alt="">
-        <h3 class="ms-2">{{request.user.username}}
+        <h3 class="ms-2">User Name:{{request.user.username}}
+            <h4>Full Name: {{request.user.first_name}} {{request.user.last_name}}</h4>
         </h3>
+        <img src="{{request.user.profile.profile_pic.url}}" class="rounded-circle" alt="{{request.user.username}}" id="profile_pic">
         <p>{{request.user.profile.bio}}</p>
         <p>{{request.user.profile.contacts}}</p>
         

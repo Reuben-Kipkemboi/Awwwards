@@ -82,3 +82,8 @@
     width: 80%;
     padding: 2.5%;
 }
+#profile_pic{
+    width: 150px;
+    height: 150px;
+    object-fit:cover;
+}

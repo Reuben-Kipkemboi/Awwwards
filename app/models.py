@@ -5,13 +5,13 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Profile(models.Model):
-    user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='user_profile')
+    user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
     profile_pic=CloudinaryField('image')
     bio=models.TextField(null=True)
     contacts=models.CharField(max_length=300)
     
     def __str__(self):
-        return self.contacts
+        return self.user.username
     
     
     def save_profile(self):

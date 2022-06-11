@@ -31,6 +31,7 @@ def register(request):
         new_user = User.objects.create_user(first_name=first_name,last_name=last_name,username=username,email=email,password=password1)
         
         new_user.save()
+        return render(request,'login.html')
     return render(request, 'register.html')
 
 
@@ -56,9 +57,11 @@ def user_logout(request):
 
 def user_profile(request):
     users= User.objects.all()
+    current_user = request.user
+    user_projects = Project.objects.filter(user=current_user)
+    print(user_projects)
     
-    
-    return render (request, 'profile.html', {'users':users})
+    return render (request, 'profile.html', {'users':users, 'user_projects':user_projects})
 
 
 def update_profile(request):
