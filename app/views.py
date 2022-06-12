@@ -17,6 +17,7 @@ def index(request):
     return render(request, 'index.html', {'projects':projects})
 
 
+
 #user registration
 def register(request):
     if request.method =='POST':
@@ -109,26 +110,36 @@ class SearchResultsView(ListView):
 #rating function
 
 def rating(request, title):
-    if request.method == 'POST':
-        post = Project.objects.get(title = title)
-        user = request.user
+    if request.method =="POST":
+        project = Project.objects.get(title=title),
+        current_user = request.user,
         comment = request.POST['comment']
-        design = request.POST['design']
-        usability = request.POST['usability']
-        content = request.POST['content']
-        creativity = request.POST['creativity']
-
+        design= request.POST['design']
+        usability= request.POST['usability']
+        content= request.POST['content']
+        creativity= request.POST['creativity']
+          
         Rating.objects.create(
-            post = post,
-            user =user,
+            project = Project.objects.get(title=title),
+            rator = request.user,
             comment = comment,
-            design = design,
-            usability = usability,
-            content = content,
-            creativity = creativity,
-            average=round((float(design) + float(usability) + float(content) + float(creativity))/5,2),)
-        return redirect('ratings', title=title)
+            design=design,
+            usability=usability,
+            content=content, 
+            creativity=creativity,
+            total= (int(design)) + (int(usability)) + (int(content)) + (int(creativity)) ,  
+            average=round((float(design) + float(usability) + float(content) + float(creativity))/4,2)  
+        )
+        return redirect ('ratings', title=title)
     else:
+        
         return render(request, 'ratings.html')
+        
+        
+        
+        
+        
+        
+    
     
 

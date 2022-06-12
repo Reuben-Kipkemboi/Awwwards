@@ -27,7 +27,7 @@ class Profile(models.Model):
     
 class Project(models.Model):
     title=models.CharField(max_length=100, null=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts",null=True, blank=True )
+    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True, blank=True )
     post_image=CloudinaryField('post_image')
     description=models.TextField(null=False)
     posted_at=models.DateTimeField(auto_now_add=True)
@@ -44,8 +44,6 @@ class Project(models.Model):
     def update_project_post(self):
         self.update()
         
-    
-    
 class Rating(models.Model):
     project_name = models.CharField(max_length=100,null=True, blank=True)
     comment = models.CharField(max_length=1000, null=True)
@@ -55,12 +53,12 @@ class Rating(models.Model):
     creativity = models.IntegerField(null=True,default=0)
     total =  models.IntegerField(null=True,default=0)
     average=models.FloatField(max_length=10,null=True)
-    user = models.ForeignKey(User,null = True, on_delete=models.CASCADE)
-    post = models.ForeignKey(Project, related_name='rating',null=True, on_delete=models.CASCADE)
+    rator = models.ForeignKey(User,null = True, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, related_name='rating',null=True, on_delete=models.CASCADE)
     
     
     def __str__(self):
-        return self.project_name
+        return self.project.title
     
     def save_rating(self):
         self.save()

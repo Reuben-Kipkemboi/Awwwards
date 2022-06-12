@@ -7,7 +7,7 @@
         <p id="label">awwwards</p>
     </div>
     <div class="details">
-        <button class="btn btn-info"></button>
+        <button class="btn btn-info">{{user.username}}</button>
 
     </div>
 
@@ -19,6 +19,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'login' %}">Register/Login <span class="sr-only">(current)</span></a>
             </li>
+            {% endif %}
             <li class="nav-item">
                 <a class="nav-link" href="#"><button type="button" class="btn btn-dark">SUBMIT YOUR SITE!</button></a>
             </li>
@@ -26,7 +27,7 @@
         </ul>
 
     </div>
-    {% endif %}
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
