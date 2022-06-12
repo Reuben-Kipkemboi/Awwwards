@@ -200,3 +200,16 @@
     width: 50px;
     object-fit: cover;
 }
+#sites-of-the-day{
+    font-weight: bold;
+}
+#hero{
+    background-image: url('/static/images/cover.jpg');
+    height: 80vh;
+    width: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+}
