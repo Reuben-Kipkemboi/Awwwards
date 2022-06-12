@@ -119,7 +119,8 @@ def rating(request, title):
     ratings= Rating.objects.all()
     project = Project.objects.get(title=title),
     if request.method =="POST":
-        # current_user = request.user,
+        project = Project.objects.get(title=title),
+        current_user = request.user,
         comment = request.POST['comment']
         design= request.POST['design']
         usability= request.POST['usability']
@@ -127,7 +128,7 @@ def rating(request, title):
         creativity= request.POST['creativity']
           
         ratings =Rating.objects.create(
-            project = Project.objects.get(title=title),
+            project=project,
             rator = request.user,
             comment = comment,
             design=design,
@@ -141,7 +142,7 @@ def rating(request, title):
         return redirect ('ratings', title=title)
     else:
         
-        return render(request, 'ratings.html', { 'project':project})
+        return render(request, 'ratings.html', {'ratings':ratings, 'project':project})
         
 #API views
 class ProfileRecords(APIView):
