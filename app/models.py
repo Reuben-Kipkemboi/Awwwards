@@ -48,6 +48,7 @@ class Project(models.Model):
     
 class Rating(models.Model):
     project_name = models.CharField(max_length=100, null=True)
+    comment = models.CharField(max_length=1000, null=False)
     design = models.IntegerField(null=True,default=0)
     usability = models.IntegerField(null=True,default=0)
     content = models.IntegerField(null=True,default=0)
