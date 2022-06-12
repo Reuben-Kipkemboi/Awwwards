@@ -17,7 +17,8 @@
     </div> -->
     <a href="" class="ms-auto">English</a>
     <span id="center">The awards of design, creativity and innovation on the internet</span>
-    <span class="regular-fonts"><i class="fa-brands fa-instagram-square fonts"></i><i class="fa-brands fa-twitter fonts"></i><i class="fa-brands fa-facebook-f fonts"></i></span>
+    <span class="regular-fonts"><i class="fa-brands fa-instagram-square fonts"></i><i
+            class="fa-brands fa-twitter fonts"></i><i class="fa-brands fa-facebook-f fonts"></i></span>
 </div>
 {% include 'navbar.html'%}
 
@@ -25,14 +26,34 @@
 <div class="container-fluid">
     <div class="row">
         {% for project in projects %}
-        <div class="col-md-5">
-            <h2>{{project.title}}</h2>
-            <img src="{{project.post_image.url}}" alt="{{project.title}}" id="images">
-            <p>{{project.description}}</p>
-            <small>{{project.posted_at}}</small>
+        <div class="col-md-4">
+            <div class="card shadow d-flex align-items-stretch" id="project-card">
+                <a href="" name="">
+                    <img src="{{project.post_image.url}}" class="card-img-top" alt="{{ project.title }}"
+                        id="project-screenshot">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+                    <p class="card-text">{{ project.description|truncatewords:30 }}</p>
+                    <hr>
+                    <div class="d-flex mt-3">
+                        {% if project.user.profile.profile_pic.url %}
+                        <img class="rounded-circle" src="{{user.profile.profile_pic.url }}" id="user-profile-image">
+                        {% else %}
+                        <img class="rounded-circle" src="https://cdn.icon-icons.com/icons2/1154/PNG/512/1486564400-account_81513.png" id="user-icon">
+                        {% endif %}
+                        <div class="d-flex flex-row justify-content-start ml-3 mt-3">
+
+                           <span class="user-name" id="name-of-user"><b> By {{user.first_name }} {{ user.last_name }}</b></span>
+                            <span class="date ml-4"><i class="fas fa-calendar-alt"></i> {{ project.posted_at |date:"D,d M,Y"}}</span>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            
         </div>
         {% endfor %}
     </div>
-</div>
 
-{% endblock content %}
+    {% endblock content %}
