@@ -3,7 +3,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 /* font-family: 'Open Sans', sans-serif; */
 #intro {
@@ -215,4 +219,26 @@
 }
 #modal-style{
     background-color: #f4f7f6;
+}
+#image-navbar{
+    height: 30px;
+    width: 30px;
+}
+.nav-item{
+    list-style: none;
+    text-decoration: none;
+}
+.Submit-site{
+    background-color: #353636;
+    height: 12vh;
+    border: none;
+    color: #fff;
+    outline: none;
+    width:200px;
+}
+#my-nav-bar{
+    height: 12vh;
+}
+#color{
+    color: #000;
 }

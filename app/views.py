@@ -20,7 +20,6 @@ from . serializers import  ProjectSerializer, ProfileSerializer
 
 def index(request):
     projects = Project.objects.all()
-    
     return render(request, 'index.html', {'projects':projects})
 
 
@@ -142,7 +141,7 @@ def rating(request, title):
         return redirect ('ratings', title=title)
     else:
         
-        return render(request, 'ratings.html', {'ratings':ratings, 'project':project})
+        return render(request, 'ratings.html', { 'project':project})
         
 #API views
 class ProfileRecords(APIView):
