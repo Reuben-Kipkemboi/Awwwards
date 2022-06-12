@@ -10,10 +10,17 @@ from .forms import ProfileUpdateForm
 from django.db.models import Q
 from django.views.generic import TemplateView, ListView
 
+#API IMports
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from . serializers import  ProjectSerializer, ProfileSerializer
+
+
 # Create your views here.
 
 def index(request):
     projects = Project.objects.all()
+    
     return render(request, 'index.html', {'projects':projects})
 
 
@@ -110,16 +117,17 @@ class SearchResultsView(ListView):
 #rating function
 
 def rating(request, title):
+    ratings= Rating.objects.all()
+    project = Project.objects.get(title=title),
     if request.method =="POST":
-        project = Project.objects.get(title=title),
-        current_user = request.user,
+        # current_user = request.user,
         comment = request.POST['comment']
         design= request.POST['design']
         usability= request.POST['usability']
         content= request.POST['content']
         creativity= request.POST['creativity']
           
-        Rating.objects.create(
+        ratings =Rating.objects.create(
             project = Project.objects.get(title=title),
             rator = request.user,
             comment = comment,
@@ -128,14 +136,27 @@ def rating(request, title):
             content=content, 
             creativity=creativity,
             total= (int(design)) + (int(usability)) + (int(content)) + (int(creativity)) ,  
-            average=round((float(design) + float(usability) + float(content) + float(creativity))/4,2)  
+            average=((float(design) + float(usability) + float(content) + float(creativity))/4)  
         )
+        ratings.save()
         return redirect ('ratings', title=title)
     else:
         
-        return render(request, 'ratings.html')
+        return render(request, 'ratings.html', {'ratings':ratings, 'project':project})
         
-        
+#API views
+class ProfileRecords(APIView):
+    def get(self, request, format=None):
+        user_profiles = Profile.objects.all()
+        serializers = ProfileSerializer(user_profiles, many=True)
+        return Response(serializers.data)
+    
+#Profile
+class ProjectRecords(APIView):
+    def get(self, request, format=None):
+        user_projects = Project.objects.all()
+        serializers = ProjectSerializer(user_projects, many=True)
+        return Response(serializers.data)
         
         
         

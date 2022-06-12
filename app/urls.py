@@ -20,7 +20,11 @@ urlpatterns = [
     
     path('search/', SearchResultsView.as_view(), name='search'),
     
-    path('ratings/<title>', views.rating, name="ratings")
+    path('ratings/<title>', views.rating, name="ratings"),
+    
+    path('api/profile/', views.ProfileRecords.as_view()),
+    
+    path('api/project/', views.ProjectRecords.as_view())
     
     
 ]

@@ -1,6 +1,8 @@
+from contextlib import nullcontext
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.forms import URLField
 
 
 # Create your models here.
@@ -30,6 +32,9 @@ class Project(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,null=True, blank=True )
     post_image=CloudinaryField('post_image')
     description=models.TextField(null=False)
+    url = models.URLField(null=True)
+    company = models.CharField(max_length=200, blank=True)
+    languages = models.CharField(max_length=100, blank=True)
     posted_at=models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
@@ -68,6 +73,7 @@ class Rating(models.Model):
         
     def update_rating(self):
         self.update()
+
 
 
 

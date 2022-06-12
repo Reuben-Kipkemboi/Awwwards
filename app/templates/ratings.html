@@ -37,6 +37,28 @@
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Rate</button>
+
+
+
+
     
 </form>
+{% if title.project %}
+{% for rating in ratings.all %}
+<h1>{{rating.average}}</h1>
+{% endfor %}
+{% else %}
+<H2>no for this title</H2>
+{% endif %}
+
+
+
+<div class="col-md-6">
+    <!-- {% for rating in ratings %}
+    <h1>{{rating.average}}</h1>
+   
+    
+    {% endfor %} -->
+</div>
+
 {% endblock content %}

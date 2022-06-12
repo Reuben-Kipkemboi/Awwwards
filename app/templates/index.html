@@ -28,6 +28,13 @@
 
 </div>
 
+{% for rating in ratings %}
+<h1>{{rating.design}}</h1>
+<h1>{{rating.creativity}}</h1>
+<h1>{{rating.usability}}</h1>
+
+{% endfor %}
+
 
 <div class="container-fluid">
     <p><span id="sites-of-the-day">Sites of the day </span> Previous Winners</p>
@@ -101,7 +108,7 @@
                                             height="40" width="40">
                                         {% endif %}
                                         <div class="d-flex flex-column justify-content-start ml-2">
-                                            <a href="/user/{{ portfolio.author.username }}">
+                                            <a href="">
                                                 <span class="name"><b>{{ project.user.first_name }}
                                                         {{ project.user.last_name }}</b></span>
                                             </a>
@@ -118,15 +125,15 @@
                                     <h4 class="text-center font-weight-bold">Current Ratings</h4>
                                     {% if ratings %}
                                     {% for rating in ratings %}
-                                    <div class="graph-star-rating-header">
-                                        <h1 class="text-black mb-4 mt-2 text-center" style="font-size: 108px;">
+                                    <div class="">
+                                        <h1 class="text-black mb-4 mt-2 text-center" style="font-size: 98px;">
                                             {{ rating.average }}.0</h1>
 
                                             <p class="text-center">Based on {{ ratings_count|length  }} reviews</p>
                                     </div>
                                     {% endfor %}
                                     {% else %}
-                                    <div class="graph-star-rating-header">
+                                    <div class="">
                                         <h1 class="text-black mb-4 mt-2 text-center" style="font-size: 108px;">0.0</h1>
                                         <p class="text-center">Based on {{ ratings_count|length  }} reviews</p>
                                     </div>
