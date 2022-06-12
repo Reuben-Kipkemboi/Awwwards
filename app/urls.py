@@ -1,6 +1,7 @@
+from unicodedata import name
 from django.urls import path
 from . import views 
-from .views import SearchResultsView
+from .views import SearchResultsView, rating
 
 urlpatterns = [
     path('', views.index, name='home'),
@@ -17,7 +18,9 @@ urlpatterns = [
     
     path('update_profile/', views.update_profile, name ='update'),
     
-    path('search/', SearchResultsView.as_view(), name='search')
+    path('search/', SearchResultsView.as_view(), name='search'),
+    
+    path('ratings/<title>', views.rating, name="ratings")
     
     
 ]
