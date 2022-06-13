@@ -84,15 +84,15 @@
                     <div class="col-md-7 shadow ml-4">
                         <h5 class="p-4" id="reviews-title">Recent Reviews</h5>
                         {% if user.is_authenticated %}
-                        <a href="##deadlink$$$" data-toggle="modal" data-target="#exampleModal{{project.id}}">
+                        <a href="#" data-toggle="modal" data-target="#exampleModal{{project.id}}">
                             <p class="float-md-right">
                                 <button id="review-btn">Review & Rate</button>
                             </p>
                         </a>
                         {% else %}
-                        <a href="{% url 'Login' %}">
+                        <a href="{% url 'login' %}">
                             <p class="float-md-right">
-                                <button id="review-btn"> Login to Review & Rate</button>
+                                <button id="review-btn"> Login to Rate </button>
                             </p>
                         </a>
 

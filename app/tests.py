@@ -55,6 +55,10 @@ class TestRating(TestCase):
         self.new_project=Project(title='test', rator=rator, post_image='test_image.jpg', description='This is a test project with test image and test credentials',url='https://test.com', company='Reuby', languages='HTML', )
         
         
-        self.rating=Rating(comment='nice project fella',design=10, usability=10, content=10, creativity=10, total=40, average=10,rator=rator, project=self.new_project )
+        self.new_rating=Rating(comment='nice project fella',design=10, usability=10, content=10, creativity=10, total=40, average=10,rator=rator, project=self.new_project )
+        
+    #is instance of Rating
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_rating, Rating))
         
 
