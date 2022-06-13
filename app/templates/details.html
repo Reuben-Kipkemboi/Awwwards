@@ -5,6 +5,19 @@
 {% block content %}
 <div class="container-fluid">
     {% include 'navbar.html' %}
+
+    <div class="detail-hero">
+        <div class="details " id="detail">
+            <h1 class=" text-white">{{project.title}}</h1>
+            <div class="ratings-average">
+                <div class="circle">
+                    <h2>{{rating.average}}</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <div class="div.col-md-12 mt-4">
         <div class="body">
             <div class="col-md-12">
