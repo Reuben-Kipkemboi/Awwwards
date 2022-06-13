@@ -37,9 +37,13 @@ Login
 
 ![Login](./app/static/images/login.png)
 
-Home
+Post A project
 
-![Welcome](./app/static/images/home.png)
+![Welcome](./app/static/images/create.png)
+
+Rate A project
+
+![Welcome](./app/static/images/rate.png)
 
 
 API Endpoint project Fetch
