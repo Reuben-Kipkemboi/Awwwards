@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block title %}Awwwards|Project_Details{% endblock title%}
+{% block content %}
+<div class="container-fluid">
+{% include 'navbar.html' %}
+    <div class="div.col-md-12 mt-4">
+        <div class="body">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-8">
+                        <img src="{{project.post_image.url}}" class="card-img-top" alt="{{ project.title }}"
+                            id="project-screenshot">
+                    </div>
+                    <div class="col-md-4">
+                        <p>{{project.description}}</p>
+
+
+                        <h4 class="desc text-dark">Uploaded By</h4>
+                        <div class="d-flex flex-row user-info">
+                            {% if portfolio.profile.profile_image.url %}
+                            <img class="rounded" src="{{ portfolio.profile.profile_image.url }}" height="40" width="40">
+                            {% else %}
+                            <img class="rounded"
+                                src="https://cdn.icon-icons.com/icons2/1154/PNG/512/1486564400-account_81513.png"
+                                height="40" width="40">
+                            {% endif %}
+                            <div class="d-flex flex-column justify-content-start ml-2">
+                                <a href="">
+                                    <span class="name"><b>{{ project.user.first_name }}{{ project.user.last_name }}</b></span>
+                                </a>
+                                <span class="date"><i class="fas fa-calendar-alt"></i>
+                                    {{ project.posted_at }}</span>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-4 rounded shadow p-4 mb-4 ml-4 clearfix">
+
+                        <h4 id="ratings-currently">Current Ratings</h4>
+                        {% if ratings %}
+                        {% for rating in ratings %}
+                        <div class="">
+                            <h1 class=" mb-4 mt-2 " id="rating-title">
+                                {{ rating.average }}.0</h1>
+
+                            <p class="text-center">Based on {{ ratings_count|length  }} reviews</p>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="">
+                            <h1 class="mb-4 mt-2" id="rating-title">0.0</h1>
+                            <p class="text-center">Based on {{ ratings_count|length  }} reviews</p>
+                        </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

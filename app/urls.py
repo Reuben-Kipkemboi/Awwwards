@@ -24,7 +24,9 @@ urlpatterns = [
     
     path('api/profile/', views.ProfileRecords.as_view()),
     
-    path('api/project/', views.ProjectRecords.as_view())
+    path('api/project/', views.ProjectRecords.as_view()),
+    
+    path('project/<title>/project_details', views.projectdetails, name='details')
     
     
 ]

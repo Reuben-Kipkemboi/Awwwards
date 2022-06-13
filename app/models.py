@@ -58,12 +58,12 @@ class Rating(models.Model):
     total =  models.IntegerField(null=True,default=0)
     average=models.FloatField(max_length=10,null=True)
     rator = models.ForeignKey(User,null = True, on_delete=models.CASCADE)
-    project = models.ForeignKey(Project, related_name='rating',null=True, on_delete=models.CASCADE),
+    project = models.ForeignKey(Project, related_name='rating',null=True, on_delete=models.CASCADE)
     rating_date = models.DateTimeField(auto_now_add=True, null=True)
     
     
     def __str__(self):
-        return self.project.title
+        return self.comment
     
     def save_rating(self):
         self.save()

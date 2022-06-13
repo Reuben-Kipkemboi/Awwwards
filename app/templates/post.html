@@ -2,8 +2,9 @@
 {% load bootstrap4 %}
 {% load static %}
 {% block content %}
+{% include 'navbar.html' %}
 <section class="vh-100">
-    <div class="container py-2 h-100">
+    <div class="container-fluid py-2 h-100" id="post-page">
         <div class="row d-flex align-items-center justify-content-center h-100">
             <div class="col-md-8">
                 <form method="POST" action="{% url 'post' %}" enctype="multipart/form-data">

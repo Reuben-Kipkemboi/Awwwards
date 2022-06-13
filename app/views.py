@@ -116,9 +116,10 @@ class SearchResultsView(ListView):
 #rating function
 
 def rating(request, title):
-    ratings= Rating.objects.all()
+    
+    project = Project.objects.get(title=title),
     if request.method =="POST":
-        project = Project.objects.get(title=title),
+        project  = Project.objects.get(title=title),
         current_user = request.user,
         comment = request.POST['comment']
         design= request.POST['design']
@@ -126,21 +127,31 @@ def rating(request, title):
         content= request.POST['content']
         creativity= request.POST['creativity']
           
-        Rating.objects.create(
-            project = Project.objects.get(title=title),
-            rator = request.user,
+        ratings =Rating.objects.create(
             comment = comment,
             design=design,
             usability=usability,
             content=content, 
             creativity=creativity,
             total= (int(design)) + (int(usability)) + (int(content)) + (int(creativity)) ,  
-            average=((float(design) + float(usability) + float(content) + float(creativity))/4)  
+            average=((float(design) + float(usability) + float(content) + float(creativity))/4),
+            rator = request.user,
+            project  = Project.objects.get(title=title),  
         )
-        return redirect ('ratings', title=title)
+        return redirect ('home',title=title)
     else:
         
-        return render(request, 'ratings.html',)
+        return render(request, 'ratings.html',{'project':project, 'ratings':ratings})
+    
+    
+def projectdetails(request, title):
+    project = Project.objects.get(title=title)
+    ratings = Rating.objects.filter(project = project.id).all()
+    count = Rating.objects.filter(project = project.id)
+    
+    
+    return render(request, 'details.html', {'project':project, 'ratings':ratings, 'count':count})
+    
         
 #API views
 class ProfileRecords(APIView):
