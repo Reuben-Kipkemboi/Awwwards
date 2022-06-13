@@ -42,9 +42,9 @@ Home
 ![Welcome](./app/static/images/home.png)
 
 
-Create a project post
+API Endpoint project Fetch
 
-![create post ](./app/static/images/create.png)
+![create post ](./app/static/images/api.png)
 
 
 ## Behaviour Driven Development
