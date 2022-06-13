@@ -18,7 +18,7 @@
                         <h4 class="desc text-dark">Uploaded By</h4>
                         <div class="d-flex flex-row user-info">
                             {% if project.user.profile.profile_pic.url %}
-                            <img class="rounded" src="{{ project.user.profile.profile_pic.url }}" height="40" width="40">
+                            <img class="rounded" src="{{ project.user.profile.profile_pic.url }}" id="user-profile-image">
                             {% else %}
                             <img class="rounded"
                                 src="https://cdn.icon-icons.com/icons2/1154/PNG/512/1486564400-account_81513.png"id="user-profile-image">
@@ -37,25 +37,24 @@
                 <div class="row mt-5">
                     <div class="col-md-4 rounded shadow p-4 mb-4 ml-4 clearfix">
 
-                        <h4 id="ratings-currently">Current Ratings</h4>
+                        <h4 id="ratings-currently">Current Project Rating</h4>
                         {% if ratings %}
                         {% for rating in ratings %}
                         <div class="">
                             <h1 class=" mb-4 mt-2 " id="rating-title">
-                                {{ rating.average }}.0</h1>
+                                {{ rating.average }}</h1>
 
-                            <p class="text-center">Based on {{ ratings_count|length  }} reviews</p>
+                            <p class="text-center">Based on {{count|length  }} ratings</p>
                         </div>
                         {% endfor %}
                         {% else %}
                         <div class="">
                             <h1 class="mb-4 mt-2" id="rating-title">0.0</h1>
-                            <p class="text-center">Based on {{ ratings_count|length  }} reviews</p>
+                            <p class="text-center">Based on {{ count|length  }} ratings</p>
                         </div>
                         {% endif %}
 
                     </div>
-
                 </div>
             </div>
         </div>
