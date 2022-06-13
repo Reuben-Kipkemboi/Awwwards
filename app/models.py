@@ -44,7 +44,7 @@ class Project(models.Model):
         self.save()
         
     def delete_project_post(self):
-        self.update()
+        self.delete()
         
     def update_project_post(self):
         self.update()
