@@ -138,7 +138,7 @@ def rating(request, title):
             rator = request.user,
             project  = Project.objects.get(title=title),  
         )
-        return redirect ('home',title=title)
+        return redirect ('details',title=title)
     else:
         
         return render(request, 'ratings.html',{'project':project, 'ratings':ratings})
