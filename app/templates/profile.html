@@ -5,6 +5,8 @@
 {% block content %}
 
 <div class="container-fluid">
+
+    {% include 'navbar.html' %}
     
     <div class="col-md-5 shadow-lg mx-auto p-4">
         <h3 class="ms-2 text-center">User Name:{{request.user.username}}
