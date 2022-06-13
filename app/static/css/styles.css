@@ -208,6 +208,7 @@
 }
 #sites-of-the-day{
     font-weight: bold;
+    padding-top:5%;
 }
 #hero{
     background-image: url('/static/images/cover.jpg');
@@ -311,4 +312,11 @@
 #heading-title{
     padding-top: 12%;
     font-size: 12vh;
+}
+#login-nav{
+    font-size: 4vh;
+    margin-top: 10%;
+    font-weight: 700;
+
+
 }
