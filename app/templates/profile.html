@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="container-fluid">
-
+    
     <div class="col-md-5 shadow-lg mx-auto p-4">
         <h3 class="ms-2 text-center">User Name:{{request.user.username}}
             <h4>Full Name: {{request.user.first_name}} {{request.user.last_name}}</h4>
@@ -21,7 +21,9 @@
 
         <p>{{request.user.profile.contacts}}</p>
 
-        <a href="{% url 'update' %}"><button type="button" class="btn btn-outline-info btn-sm mx-auto">Edit profile</button></a>
+        <a href="{% url 'update' %}"><button type="button" class="btn btn-outline-info btn-sm mx-auto"><i class="fa-solid fa-pen-to-square"></i>Edit profile</button></a>
+
+        <a href="{% url 'home' %}"><button type="button" class="btn btn-outline-info btn-sm"><i class="fa-solid fa-angles-left"></i>Back Home</button></a>
 
     </div>
 

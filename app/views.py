@@ -117,7 +117,6 @@ class SearchResultsView(ListView):
 
 def rating(request, title):
     ratings= Rating.objects.all()
-    project = Project.objects.get(title=title),
     if request.method =="POST":
         project = Project.objects.get(title=title),
         current_user = request.user,
@@ -127,8 +126,8 @@ def rating(request, title):
         content= request.POST['content']
         creativity= request.POST['creativity']
           
-        ratings =Rating.objects.create(
-            project=project,
+        Rating.objects.create(
+            project = Project.objects.get(title=title),
             rator = request.user,
             comment = comment,
             design=design,
@@ -138,11 +137,10 @@ def rating(request, title):
             total= (int(design)) + (int(usability)) + (int(content)) + (int(creativity)) ,  
             average=((float(design) + float(usability) + float(content) + float(creativity))/4)  
         )
-        ratings.save()
         return redirect ('ratings', title=title)
     else:
         
-        return render(request, 'ratings.html', {'ratings':ratings, 'project':project})
+        return render(request, 'ratings.html',)
         
 #API views
 class ProfileRecords(APIView):

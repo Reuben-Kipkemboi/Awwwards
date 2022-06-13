@@ -242,3 +242,14 @@
 #color{
     color: #000;
 }
+
+#ratings-currently{
+    text-align: center;
+    font-weight: bold;
+
+}
+#rating-title{
+    color: #000;
+    text-align: center;
+    font-size: 100px;
+}

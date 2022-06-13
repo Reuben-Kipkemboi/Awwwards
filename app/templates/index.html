@@ -10,12 +10,7 @@
 
 </div>
 <div class="col-md-12 text-center" id="second-box">
-    <!-- <div class="row pt-2" id="second-box">
-        <div class="col-md-2">English</div>
-        <div class="col-md-6 mx-auto">The awards of design, creativity and innovation on the internet</div>
-        <div class="col-md-2 float-md-right"></div>
-    </div> -->
-    <a href="" class="ms-auto">English</a>
+    <!-- <a href="" class="">English</a> -->
     <span id="center">The awards of design, creativity and innovation on the internet</span>
     <span class="regular-fonts"><i class="fa-brands fa-instagram-square fonts"></i><i
             class="fa-brands fa-twitter fonts"></i><i class="fa-brands fa-facebook-f fonts"></i></span>
@@ -96,7 +91,7 @@
                                             width="40">
                                         {% else %}
                                         <img class="rounded"
-                                            src="https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-8.png"
+                                            src="https://cdn.icon-icons.com/icons2/1154/PNG/512/1486564400-account_81513.png"
                                             height="40" width="40">
                                         {% endif %}
                                         <div class="d-flex flex-column justify-content-start ml-2">
@@ -114,11 +109,11 @@
                             <div class="row mt-5">
                                 <div class="col-md-4 rounded shadow p-4 mb-4 ml-4 clearfix">
 
-                                    <h4 class="text-center font-weight-bold">Current Ratings</h4>
+                                    <h4 id="ratings-currently">Current Ratings</h4>
                                     {% if ratings %}
                                     {% for rating in ratings %}
                                     <div class="">
-                                        <h1 class="text-black mb-4 mt-2 text-center" style="font-size: 98px;">
+                                        <h1 class=" mb-4 mt-2 " id="rating-title">
                                             {{ rating.average }}.0</h1>
 
                                             <p class="text-center">Based on {{ ratings_count|length  }} reviews</p>
@@ -126,7 +121,7 @@
                                     {% endfor %}
                                     {% else %}
                                     <div class="">
-                                        <h1 class="text-black mb-4 mt-2 text-center" style="font-size: 108px;">0.0</h1>
+                                        <h1 class="mb-4 mt-2" id="rating-title">0.0</h1>
                                         <p class="text-center">Based on {{ ratings_count|length  }} reviews</p>
                                     </div>
                                     {% endif %}
