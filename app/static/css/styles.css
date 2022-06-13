@@ -273,3 +273,14 @@
     line-height: 1.6;
 
 }
+#review-btn{
+    outline: 1px solid #00203e;
+    border: none;
+    padding: 3%;
+    background-color: #f4f7f6;
+    width: 150px;
+    color: #00203e;
+    border-radius: 4px;
+
+    
+}
