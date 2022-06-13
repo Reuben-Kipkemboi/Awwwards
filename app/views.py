@@ -91,7 +91,11 @@ def user_post(request):
         photo=request.FILES.get('photo')
         title=request.POST.get('title')
         description=request.POST.get('description')
-        posts=Project(post_image=photo,title=title,description=description)
+        url=request.POST.get('url')
+        company=request.POST.get('company')
+        languages=request.POST.get('languages')
+        
+        posts=Project(post_image=photo,title=title,description=description, url=url, company=company, languages=languages)
         
         posts.save_project_post()
         

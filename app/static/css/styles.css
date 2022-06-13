@@ -193,7 +193,8 @@
 }
 #project-screenshot{
     border-radius: 10px 10px 5px 5px;
-    height: 70vh;
+    height: 55vh;
+    object-fit: cover;
 }
 #user-profile-image{
     height: 50px;
@@ -291,15 +292,10 @@
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0.9;
-
 }
 #detail{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(0, -50%);
     text-align: center;
-
+    align-items: center;
 }
 .ratings-average{
     display: flex;
@@ -311,4 +307,8 @@
     width: 70px;
     border-radius: 50%;
     
+}
+#heading-title{
+    padding-top: 12%;
+    font-size: 12vh;
 }
