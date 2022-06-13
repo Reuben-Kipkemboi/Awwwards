@@ -29,7 +29,7 @@
     <div class="row">
         {% for project in projects %}
         <div class="col-md-4">
-            <div class="card shadow d-flex align-items-stretch" id="project-card">
+            <div class="card shadow" id="project-card">
                 <a href="/project/{{project.title}}/project_details">
                     <img src="{{project.post_image.url}}" class="card-img-top" alt="{{ project.title }}"
                         id="project-screenshot">
