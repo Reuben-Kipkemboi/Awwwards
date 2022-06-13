@@ -192,7 +192,8 @@
     border-radius: 10px;
 }
 #project-screenshot{
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 5px 5px;
+    height: 70vh;
 }
 #user-profile-image{
     height: 50px;

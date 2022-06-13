@@ -35,6 +35,7 @@ class Project(models.Model):
     company = models.CharField(max_length=200, blank=True)
     languages = models.CharField(max_length=100, blank=True)
     posted_at=models.DateTimeField(auto_now_add=True)
+    profile = models.ForeignKey(Profile, null = True, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.title
