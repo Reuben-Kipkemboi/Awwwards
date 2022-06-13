@@ -39,7 +39,7 @@
                         </div>
                         <h5 class="desc mt-2">Designed By</h5>
                         <div class="d-flex flex-row user-info">
-                            {% if project.user.profile.profile_pic.url %}
+                            {% if request.user.profile.profile_pic.url %}
                             <img class="rounded" src="{{ project.user.profile.profile_pic.url }}"
                                 id="user-profile-image">
                             {% else %}
